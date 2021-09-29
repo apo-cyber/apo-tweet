@@ -1,0 +1,30 @@
+
+<div class="my-4 py-4 bg-light shadow">
+  <div class="row justify-content-md-center">
+    <div class="col-md-8 shadow p-5 bg-body rounded overflow-scroll">
+      <%= auto_link(simple_format(h(@post.content), {}, sanitize: false, wrapper_tag: "h3")) %>
+      <div class="text-muted my-3"><%=@post.created_at%></div>
+        <% if current_user.already_liked?(@post) %>
+          <%= button_to 'いいねを取り消す', post_like_path(@post), method: :delete %>
+          <i class="bi bi-hand-thumbs-up-fill", style="font-size: 1.5rem; color: red;"></i>
+        <% else %>
+          <%= button_to 'いいね', post_likes_path(@post) %>
+          <i class="bi bi-hand-thumbs-up", style="font-size: 1.5rem;"></i>
+        <% end %>
+        <span class="fs-3 fw-bold" ><%= @post.likes.count %></span>
+
+        <!--<h2>いいねしたユーザー</h2>
+        <% @post.liked_users.each do |user| %>
+          <li><%= user.name %></li>
+        <% end %> -->
+
+      <%= image_tag @post.image, class:"img-fluid" if @post.image.attached? %>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+        <% if @post.user.id==current_user.id %>
+          <%= link_to '編集', edit_post_path(@post), class:"btn btn-primary" %>
+          <%= link_to '削除', post_path(@post), method: :delete, data: {confirm: "削除します　よろしいですか?"}, class:"btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

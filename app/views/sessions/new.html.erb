@@ -1,0 +1,20 @@
+<h1 class="text-center">ログイン</h1>
+
+<div class="container my-4 py-4 bg-light shadow">
+  <div class="row justify-content-md-center">
+    <div class="col-md-8 col-form-label">
+      <h5 class="text-end"><span class="badge bg-secondary">Enjoy your post！</span></h5>
+      <%= form_with scope: :session, local: true do |f| %>
+        <div class="form-group mb-4">
+          <%= f.label :email %>
+          <%= f.text_field :email, class:"form-control form-control" %>
+        </div>
+        <div class="form-group mb-4">
+          <%= f.label :password %>
+          <%= f.password_field :password, class:"form-control form-control" %>
+        </div>
+        <%= f.submit 'ログイン', class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
