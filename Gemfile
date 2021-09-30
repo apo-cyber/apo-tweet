@@ -62,6 +62,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails_autolink' #1.1.6
 gem 'ransack' #2.4.2
-gem 'jquery-rails'
 gem 'kaminari'
 gem 'bootstrap5-kaminari-views'
