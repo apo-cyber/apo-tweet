@@ -15,13 +15,4 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def require_current_user
-      unless current_user.admin
-        unless current_user.id==params[:id].to_i
-          flash[:notice]="権限がありません。"
-          redirect_to user_path(current_user)
-        end
-      end
-    end
-
 end
