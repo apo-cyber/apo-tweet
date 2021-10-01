@@ -63,3 +63,4 @@ gem 'rails_autolink' #1.1.6
 gem 'ransack' #2.4.2
 gem 'kaminari'
 gem 'bootstrap5-kaminari-views'
+gem "aws-sdk-s3", require: false #追記
