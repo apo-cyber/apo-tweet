@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[title content created_at]
+    %w[title content]
   end
 
   def self.ransackable_assosiations(auth_object = nil)

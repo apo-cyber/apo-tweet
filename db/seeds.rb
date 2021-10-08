@@ -8,7 +8,7 @@
 User.create!(
   name:'admin',
   email: 'admin@jmail.com'
-  admin: True,
+  admin: true,
   password:'ad93639'
   password_confirmation: 'ad93639'
 )
